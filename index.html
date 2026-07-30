@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アオヤママヒロ｜Drummer</title>
+  <meta name="description" content="関西を中心に活動するドラマー アオヤママヒロのホームページ。ライブサポート・レコーディング・同期演奏対応。" />
+  <meta property="og:title" content="アオヤママヒロ｜Drummer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:"Inter","Noto Sans JP",sans-serif;
+      background:#090909;
+      color:#f5f5f5;
+      line-height:1.9;
+      overflow-x:hidden;
+    }
+    img{width:100%;display:block;}
+    a{color:#fff;text-decoration:none;}
+    .container{width:90%;max-width:1200px;margin:auto;}
+    section{padding:120px 0;}
+    .section-title{
+      font-size:2.4rem;
+      margin-bottom:50px;
+      font-weight:700;
+      letter-spacing:.08em;
+      border-left:4px solid #fff;
+      padding-left:18px;
+    }
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(0,0,0,.45);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      height:80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{font-size:1rem;letter-spacing:.25em;font-weight:700;}
+    .nav-links{display:flex;gap:35px;}
+    .nav-links a{
+      font-size:.9rem;
+      letter-spacing:.12em;
+      color:#d8d8d8;
+      transition:.3s;
+    }
+    .nav-links a:hover{color:#fff;}
+    header{
+      height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.78)),url('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+    .hero{width:90%;}
+    .hero-sub{color:#b0b0b0;letter-spacing:.4em;margin-bottom:20px;font-size:.85rem;}
+    .hero h1{font-size:clamp(3.5rem,10vw,7rem);line-height:1;letter-spacing:.08em;margin-bottom:30px;}
+    .hero-text{color:#d0d0d0;font-size:1.1rem;margin-bottom:45px;}
+    .hero-copy{max-width:700px;margin:auto;color:#c5c5c5;}
+    .hero-btn{
+      display:inline-block;
+      margin-top:45px;
+      padding:16px 42px;
+      border:1px solid rgba(255,255,255,.35);
+      transition:.4s;
+      letter-spacing:.1em;
+    }
+    .hero-btn:hover{background:#fff;color:#000;transform:translateY(-3px);}
+    .profile{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+    .profile-image{position:relative;}
+    .profile-image img{border-radius:18px;filter:grayscale(20%);}
+    .profile-image::after{
+      content:"";
+      position:absolute;
+      inset:15px;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:18px;
+      pointer-events:none;
+    }
+    .profile-text{color:#d7d7d7;font-size:1rem;}
+    .dark{background:#111;}
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+    .skill-card{
+      padding:35px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(10px);
+      transition:.4s ease;
+    }
+    .skill-card:hover{transform:translateY(-8px);border-color:#777;}
+    .skill-card h3{margin-bottom:18px;font-size:1.15rem;}
+    .skill-card p{color:#cfcfcf;}
+    .gear{
+      margin-top:40px;
+      background:#171717;
+      padding:40px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .support-list,.schedule-list{list-style:none;}
+    .support-list li,.schedule-list li{
+      background:#151515;
+      margin-bottom:18px;
+      padding:24px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.06);
+      transition:.3s;
+    }
+    .support-list li:hover,.schedule-list li:hover{
+      border-color:#666;
+      transform:translateY(-3px);
+    }
+    .contact{text-align:center;}
+    .contact p{color:#cfcfcf;}
+    .sns-links{
+      margin-top:40px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .sns-links a{
+      padding:15px 32px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:999px;
+      transition:.3s;
+    }
+    .sns-links a:hover{background:#fff;color:#000;}
+    footer{
+      padding:50px 20px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:#8a8a8a;
+      font-size:.9rem;
+    }
+    .fade{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s;
+    }
+    .fade.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+    @media(max-width:900px){
+      .profile{grid-template-columns:1fr;}
+      .nav-links{display:none;}
+      section{padding:90px 0;}
+      .section-title{font-size:1.8rem;}
+      .hero h1{font-size:3.5rem;}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">MAHIRO AOYAMA</a>
+      <div class="nav-links">
+        <a href="#profile">PROFILE</a>
+        <a href="#style">STYLE</a>
+        <a href="#works">WORKS</a>
+        <a href="#schedule">SCHEDULE</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero fade">
+      <h1>アオヤママヒロ</h1>
+      <p class="hero-text">Drummer / Live＆Recording</p>
+    </div>
+  </header>
+
+  <section id="profile" class="fade">
+    <div class="container">
+      <h2 class="section-title">PROFILE</h2>
+      <div class="profile">
+        <div class="profile-text">
+          <p>2005年生まれ、関西在住。</p>
+          <p>踊る！ディスコ室町のメンバー。</p><br>
+          <p>幼少期より約10年間エレクトーンを習い、音楽の構造や理論を学ぶ。</p>
+          <p>中学では吹奏楽部でパーカッション、高校では強豪校の軽音楽部にてドラムを担当し、全国大会へ複数回出場。</p><br>
+          <p>2019年 関西打楽器協会主催 ドラムコンテスト グランプリ受賞。</p>
+          <p>2025年 リズム＆ドラムマガジン（リットーミュージック）主催「誌上ドラム・コンテスト」準グランプリ受賞。</p><br>
+          <p>高校在学中より本格的に活動を開始し、現在までに10組以上のアーティストのライブ・レコーディングに参加。</p>
+          <p>現在も関西を中心に、全国各地で精力的に活動中。</p>
+        </div>
+        <div class="profile-image">
+          <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1200&auto=format&fit=crop" alt="drummer">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="style" class="dark fade">
+    <div class="container">
+      <h2 class="section-title">STYLE</h2>
+      <div class="skills">
+        <div class="skill-card">
+          <h3>対応ジャンル</h3>
+          <p>繊細なポップスから疾走感あるロック、グルーヴィーなファンクまで対応。</p>
+        </div>
+        <div class="skill-card">
+          <h3>音楽理論・アレンジ</h3>
+          <p>エレクトーン経験で培った音楽理論とアレンジ力を活かしたプレイ。</p>
+        </div>
+        <div class="skill-card">
+          <h3>同期演奏対応</h3>
+          <p>Logic X搭載Mac・ZOOMのMTRを所有。ライブ・レコーディングでの同期演奏に対応可能。</p>
+        </div>
+        <div class="skill-card">
+          <h3>即興・対応力</h3>
+          <p>ジャムセッション参加を通じ、即興性と柔軟な対応力を磨き続けている。</p>
+        </div>
+      </div>
+
+      <div class="gear">
+        <h3>機材・その他</h3><br>
+        <p>ドラム機材一式所有。普通車運転免許・機材車あり。遠征や機材搬入にも柔軟に対応可能。</p>
+      </div>
+    </div>
+  </section>
+
+<section id="works" class="fade">
+  <div class="container">
+    <h2 class="section-title">SUPPORT WORKS</h2>
+    <ul class="support-list">
+      <li>踊る！ディスコ室町 (2025-)｜ファンク</li>
+      <li>ざらばんし (2025-)｜TOKYO CALLING、Lavt 3MAN LIVE TOUR 2025 “L.S.Z” ほか</li>
+      <li>フクスイボンニカエス (2023-)｜見放題、MINAMI WHEEL、ツタロックDIG ほか</li>
+      <li>小倉悠吾 (2026-)</li>
+      <li>grating hunny (2026-)</li>
+      <li>ソナチネ (2025-)</li>
+      <li>Messy last girl (2025-)</li>
+      <li>mango. (2025)</li>
+      <li>なよなよボーイズ (2025-)</li>
+      <li>爽風紀 (2024-2025)</li>
+      <li>The Art of Losing (2024-2025)</li>
+      <li>Slow’n Steady (2024-)</li>
+      <li>フィラメント (2024)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="schedule" class="dark fade">
+  <section style="background:#111;">
+    <div class="container">
+      <h2 class="section-title">MAIN LIVE SCHEDULE 2025</h2>
+      <ul class="schedule-list">
+        <li>5/3(土･祝) AOHARU｜高槻ジャズストリート2025 @阪急高槻市駅駅前広場ステージ</li>
+        <li>5/16(金) ざらばんし｜Lavt 3MAN LIVE TOUR 2025 “L.S.Z” @梅田シャングリラ</li>
+        <li>6/8(日) フクスイボンニカエス｜@BIGCAT</li>
+        <li>7/5(土) フクスイボンニカエス｜見放題大阪</li>
+        <li>7/14(月) Akito & Mahiro｜@Live Spot RAG</li>
+        <li>9/23(火) フクスイボンニカエス｜TOKYO CALLING 2025 @下北沢14会場</li>
+        <li>9/28(日) ざらばんし｜TOKYO CALLING 2025 @下北沢14会場</li>
+        <li>10/11(土) フクスイボンニカエス｜MINAMI WHEEL 2025</li>
+        <li>10/13(月･祝) 踊る！ディスコ室町｜MINAMI WHEEL 2025</li>
+        <li>11/2(日) AOHARU｜亀岡ジャズフェスティバル2025 @サンガスタジアム内</li>
+        <li>11/6(木) ざらばんし｜@Spotify O-nest</li>
+      </ul>
+    </div>
+  </section>
+
+<section>
+  <section id="contact" class="fade">
+    <div class="container contact">
+      <h2 class="section-title">CONTACT</h2>
+      <p>ライブサポート・レコーディング等のご依頼・ご相談は、Instagramまたはメールよりお気軽にご連絡ください。</p>
+      <div class="sns-links">
+        <a href="#">Instagram</a>
+        <a href="mailto:sample@gmail.com">Mail</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 MAHIRO AOYAMA</p>
+  </footer>
+
+  <script>
+    const fades = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('active');
+        }
+      });
+    },{threshold:0.15});
+
+    fades.forEach(fade=>{
+      observer.observe(fade);
+    });
+  </script>
+</body>
+</html>
